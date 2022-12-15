@@ -33,10 +33,14 @@ fi
 cp ../dotfiles/.vimrc ~/.vimrc
 
 # copy scripts
+if [[ -d ~/.config/i3/bin ]]; then
+	mkdir ~/.config/i3/bin
+fi
 cp left_monitor.sh ~/left_monitor.sh
 cp right_monitor.sh ~/right_monitor.sh
 cp logout.sh ~/.config/i3/bin/logout.sh
 cp rofifinder.sh ~/.config/i3/bin/rofifinder.sh
+cp .set_wp.sh ~/.set_wp.sh
 
 # download a wallpaper
 if [[ ! -d ~/Pictures/wallpapers ]]; then
