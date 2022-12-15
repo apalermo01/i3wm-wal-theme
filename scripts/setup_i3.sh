@@ -4,12 +4,12 @@
 # install dependencies
 sudo apt install feh \
 				 compton \
-				 pip \
+				 python3-pip \
 				 vim \
 				 curl \
 				 neofetch \
-				 xclip \
-				 brave-browser 
+				 xclip 
+				 # brave-browser 
 
 pip install --user bumblebee-status
 pip install --user pywal
@@ -27,7 +27,7 @@ fi
 cp ../dotfiles/i3-config ~/.config/i3/config
 cp ../dotfiles/compton.conf ~/.config/compton.conf
 if [[ -f ~/.vimrc ]]; then
-	ehco "previous .vimrc found, adding backup"
+	echo "previous .vimrc found, adding backup"
 	cp ~/.vimrc ~/.vimrc_backup
 fi
 cp ../dotfiles/.vimrc ~/.vimrc
@@ -43,4 +43,6 @@ if [[ ! -d ~/Pictures/wallpapers ]]; then
 	mkdir ~/Pictures/wallpapers
 fi
 curl -o ~/Pictures/wallpapers/linux_wallpaper.jpg -L https://www.technocrazed.com/wp-content/uploads/2015/12/Linux-Wallpaper-41.jpg 
+touch ~/.current_background
 echo "wal -n -i \$(cat ~/.current_background) > /dev/null" >> ~/.bashrc
+echo "neofetch" >> ~/.bashrc
